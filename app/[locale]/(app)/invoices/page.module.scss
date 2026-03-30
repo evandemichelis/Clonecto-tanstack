@@ -18,6 +18,7 @@
 .toolbar {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   color: var(--color-text);
   gap: 10px;
   margin-bottom: 14px;
@@ -29,6 +30,7 @@
     font-size: 13.5px;
     outline: none;
     width: 240px;
+    max-width: 100%;
     background: var(--color-input-bg);
 
     &:focus {
@@ -51,6 +53,13 @@
       border-color: var(--color-primary);
     }
   }
+
+  @media (max-width: 480px) {
+    input,
+    select {
+      width: 100%;
+    }
+  }
 }
 
 .card {
@@ -61,8 +70,14 @@
   overflow: hidden;
 }
 
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 
   th {

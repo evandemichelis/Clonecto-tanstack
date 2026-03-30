@@ -81,6 +81,7 @@ export default function InvoicesPage() {
             )}
           </div>
         ) : (
+          <div className={styles.tableWrapper}>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -130,6 +131,7 @@ export default function InvoicesPage() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
 

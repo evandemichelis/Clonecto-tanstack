@@ -13,7 +13,9 @@
       "Bash(ls \"app/[locale]/\\(app\\)/\")",
       "Bash(grep -l \"useLocale\\\\|LocaleContext\" components/**/*.tsx app/**/**/*.tsx)",
       "Bash(node:*)",
-      "Bash(grep -r \"createProxy\\\\|createMiddleware\" node_modules/next-intl/dist/esm/*.mjs)"
+      "Bash(grep -r \"createProxy\\\\|createMiddleware\" node_modules/next-intl/dist/esm/*.mjs)",
+      "Bash(cat -n \"app/[locale]/\\(app\\)/invoices/[id]/page.module.scss\")",
+      "Bash(cat -n \"app/[locale]/\\(app\\)/clients/[id]/page.module.scss\")"
     ]
   }
 }

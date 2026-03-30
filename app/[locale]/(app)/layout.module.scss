@@ -10,4 +10,10 @@
   min-width: 0;
   background: var(--color-bg);
   padding: 28px 32px;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 20px 16px;
+  }
 }

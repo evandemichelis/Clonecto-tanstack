@@ -80,6 +80,7 @@ export default function DashboardPage() {
         {invoices.length === 0 ? (
           <div className={styles.empty}>{t("dashboard.empty")}</div>
         ) : (
+          <div className={styles.tableWrapper}>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -110,6 +111,7 @@ export default function DashboardPage() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </div>

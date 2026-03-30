@@ -26,11 +26,16 @@
     font-size: 13.5px;
     outline: none;
     width: 280px;
+    max-width: 100%;
     background: var(--color-surface);
 
     &:focus {
       border-color: var(--color-primary);
       box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
     }
   }
 }
@@ -39,6 +44,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .clientCard {

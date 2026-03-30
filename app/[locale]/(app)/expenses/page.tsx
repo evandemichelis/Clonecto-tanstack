@@ -81,6 +81,7 @@ export default function ExpensesPage() {
             )}
           </div>
         ) : (
+          <div className={styles.tableWrapper}>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -126,6 +127,7 @@ export default function ExpensesPage() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
 
