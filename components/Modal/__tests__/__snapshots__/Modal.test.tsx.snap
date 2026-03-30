@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Modal matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="overlay"
+  >
+    <div
+      class="modal"
+    >
+      <div
+        class="header"
+      >
+        <h2>
+          Mon modal
+        </h2>
+        <button
+          aria-label="Fermer"
+          class="closeBtn"
+        >
+          ✕
+        </button>
+      </div>
+      <div
+        class="body"
+      >
+        <p>
+          Contenu du modal
+        </p>
+      </div>
+      <div
+        class="footer"
+      >
+        <button>
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

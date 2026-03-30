@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`StatCard matches snapshot with sub 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <div
+      class="iconWrapper"
+    >
+      <span
+        data-testid="icon"
+      >
+        💰
+      </span>
+    </div>
+    <div
+      class="label"
+    >
+      Total encaissements
+    </div>
+    <div
+      class="value"
+    >
+      12 450 €
+    </div>
+    <div
+      class="sub"
+    >
+      +12% ce mois
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StatCard matches snapshot without sub 1`] = `
+<DocumentFragment>
+  <div
+    class="card"
+  >
+    <div
+      class="iconWrapper"
+    >
+      <span
+        data-testid="icon"
+      >
+        💰
+      </span>
+    </div>
+    <div
+      class="label"
+    >
+      Total encaissements
+    </div>
+    <div
+      class="value"
+    >
+      12 450 €
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Badge matches snapshot 1`] = `
+<DocumentFragment>
+  <span
+    class="badge blue"
+  >
+    En attente
+  </span>
+</DocumentFragment>
+`;

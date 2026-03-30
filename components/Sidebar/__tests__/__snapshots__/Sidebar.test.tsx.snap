@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Sidebar matches snapshot 1`] = `
+<DocumentFragment>
+  <aside
+    class="sidebar"
+  >
+    <div
+      class="logo"
+    >
+      <a
+        class="logoLink"
+        href="/dashboard"
+      >
+        <div
+          class="logoIcon"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-layers"
+            fill="none"
+            height="20"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
+            />
+            <path
+              d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"
+            />
+            <path
+              d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"
+            />
+          </svg>
+        </div>
+        <span>
+          Clonecto
+        </span>
+      </a>
+      <button
+        aria-label="Toggle menu"
+        class="mobileToggle"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-menu"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 5h16"
+          />
+          <path
+            d="M4 12h16"
+          />
+          <path
+            d="M4 19h16"
+          />
+        </svg>
+      </button>
+    </div>
+    <nav
+      class="nav "
+    >
+      <a
+        class="navItem navItemActive"
+        href="/dashboard"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-layout-dashboard"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="9"
+            rx="1"
+            width="7"
+            x="3"
+            y="3"
+          />
+          <rect
+            height="5"
+            rx="1"
+            width="7"
+            x="14"
+            y="3"
+          />
+          <rect
+            height="9"
+            rx="1"
+            width="7"
+            x="14"
+            y="12"
+          />
+          <rect
+            height="5"
+            rx="1"
+            width="7"
+            x="3"
+            y="16"
+          />
+        </svg>
+        nav.dashboard
+      </a>
+      <a
+        class="navItem "
+        href="/invoices"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-file-text"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
+          />
+          <path
+            d="M14 2v5a1 1 0 0 0 1 1h5"
+          />
+          <path
+            d="M10 9H8"
+          />
+          <path
+            d="M16 13H8"
+          />
+          <path
+            d="M16 17H8"
+          />
+        </svg>
+        nav.invoices
+      </a>
+      <a
+        class="navItem "
+        href="/expenses"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-receipt"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 17V7"
+          />
+          <path
+            d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8"
+          />
+          <path
+            d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"
+          />
+        </svg>
+        nav.expenses
+      </a>
+      <a
+        class="navItem "
+        href="/clients"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-users"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+          />
+          <path
+            d="M16 3.128a4 4 0 0 1 0 7.744"
+          />
+          <path
+            d="M22 21v-2a4 4 0 0 0-3-3.87"
+          />
+          <circle
+            cx="9"
+            cy="7"
+            r="4"
+          />
+        </svg>
+        nav.clients
+      </a>
+    </nav>
+    <div
+      class="footer "
+    >
+      <a
+        class="navItem "
+        href="/settings"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-settings"
+          fill="none"
+          height="18"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="3"
+          />
+        </svg>
+        nav.settings
+      </a>
+    </div>
+  </aside>
+</DocumentFragment>
+`;
