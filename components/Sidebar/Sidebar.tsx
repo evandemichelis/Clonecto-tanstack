@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import {
   LayoutDashboard,
   FileText,
@@ -10,19 +10,18 @@ import {
   Layers,
   Settings,
 } from "lucide-react";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import styles from "./Sidebar.module.scss";
 
 const NAV_ITEMS = [
-  { href: "/dashboard", key: "dashboard" as const, Icon: LayoutDashboard },
-  { href: "/invoices", key: "invoices" as const, Icon: FileText },
-  { href: "/expenses", key: "expenses" as const, Icon: Receipt },
-  { href: "/clients", key: "clients" as const, Icon: Users },
+  { href: "/dashboard", key: "nav.dashboard" as const, Icon: LayoutDashboard },
+  { href: "/invoices", key: "nav.invoices" as const, Icon: FileText },
+  { href: "/expenses", key: "nav.expenses" as const, Icon: Receipt },
+  { href: "/clients", key: "nav.clients" as const, Icon: Users },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const { t } = useLocale();
+  const t = useTranslations();
 
   const navLink = (href: string, Icon: React.ElementType, label: string) => {
     const isActive = pathname === href || pathname.startsWith(href + "/");
@@ -49,12 +48,12 @@ export default function Sidebar() {
 
       <nav className={styles.nav}>
         {NAV_ITEMS.map(({ href, key, Icon }) =>
-          navLink(href, Icon, t.nav[key]),
+          navLink(href, Icon, t(key)),
         )}
       </nav>
 
       <div className={styles.footer}>
-        {navLink("/settings", Settings, t.nav.settings)}
+        {navLink("/settings", Settings, t("nav.settings"))}
       </div>
     </aside>
   );

@@ -116,6 +116,19 @@
       "number": "FAC-2026-009",
       "status": "to_send",
       "id": "CGPDet3XQAE"
+    },
+    {
+      "clientName": "John Cena Jr",
+      "date": "2026-03-30",
+      "dueDate": "2026-04-29",
+      "subtotal": 12,
+      "vatRate": 20,
+      "vat": 2.4,
+      "total": 14.4,
+      "notes": "",
+      "number": "FAC-2026-010",
+      "status": "paid",
+      "id": "LH76NaZ4vRs"
     }
   ],
   "expenses": [

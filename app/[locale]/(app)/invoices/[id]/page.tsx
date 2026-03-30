@@ -1,16 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { use } from "react";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { useInvoices, useUpdateInvoice, useDeleteInvoice } from "@/lib/queries/invoices";
 import Badge, { invoiceStatusVariant } from "@/components/Badge/Badge";
 import Button from "@/components/Button/Button";
 import InvoiceForm from "@/components/Forms/InvoiceForm/InvoiceForm";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { InvoiceStatus } from "@/types";
 import styles from "./page.module.scss";
+
+const INVOICE_STATUSES = ["to_send", "pending", "paid", "overdue"] as const;
 
 export default function InvoiceDetailPage({
   params,
@@ -19,7 +21,7 @@ export default function InvoiceDetailPage({
 }) {
   const { id } = use(params);
   const router = useRouter();
-  const { t } = useLocale();
+  const t = useTranslations();
   const { data: invoices = [] } = useInvoices();
   const updateInvoice = useUpdateInvoice();
   const deleteInvoice = useDeleteInvoice();
@@ -30,17 +32,17 @@ export default function InvoiceDetailPage({
     return (
       <div className={styles.page}>
         <button className={styles.back} onClick={() => router.push("/invoices")}>
-          ← Retour
+          {t("common.back")}
         </button>
         <p style={{ color: "var(--color-text-secondary)" }}>
-          {t.invoices.notFound}
+          {t("invoices.notFound")}
         </p>
       </div>
     );
   }
 
   async function handleDelete() {
-    if (confirm(t.invoices.deleteConfirm(invoice!.number))) {
+    if (confirm(t("invoices.deleteConfirm", { number: invoice!.number }))) {
       await deleteInvoice.mutateAsync(id);
       router.push("/invoices");
     }
@@ -53,7 +55,7 @@ export default function InvoiceDetailPage({
       )}
 
       <button className={styles.back} onClick={() => router.push("/invoices")}>
-        {t.invoices.backToList}
+        {t("invoices.backToList")}
       </button>
 
       <div className={styles.pageHeader}>
@@ -64,36 +66,36 @@ export default function InvoiceDetailPage({
         <div className={styles.actions}>
           <Badge
             variant={invoiceStatusVariant[invoice.status]}
-            label={t.status.invoice[invoice.status]}
+            label={t(`status.invoice.${invoice.status}` as Parameters<typeof t>[0])}
           />
           {invoice.status !== "paid" && (
             <Button variant="secondary" size="sm" onClick={() => setEditOpen(true)}>
-              {t.common.edit}
+              {t("common.edit")}
             </Button>
           )}
           <Button variant="danger" size="sm" onClick={handleDelete}>
-            {t.common.delete}
+            {t("common.delete")}
           </Button>
         </div>
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardTitle}>{t.invoices.detail.info}</div>
+        <div className={styles.cardTitle}>{t("invoices.detail.info")}</div>
         <div className={styles.grid}>
           <div className={styles.field}>
-            <div className={styles.fieldLabel}>{t.invoices.detail.client}</div>
+            <div className={styles.fieldLabel}>{t("invoices.detail.client")}</div>
             <div className={styles.fieldValue}>{invoice.clientName}</div>
           </div>
           <div className={styles.field}>
-            <div className={styles.fieldLabel}>{t.invoices.detail.number}</div>
+            <div className={styles.fieldLabel}>{t("invoices.detail.number")}</div>
             <div className={styles.fieldValue}>{invoice.number}</div>
           </div>
           <div className={styles.field}>
-            <div className={styles.fieldLabel}>{t.invoices.detail.date}</div>
+            <div className={styles.fieldLabel}>{t("invoices.detail.date")}</div>
             <div className={styles.fieldValue}>{formatDate(invoice.date)}</div>
           </div>
           <div className={styles.field}>
-            <div className={styles.fieldLabel}>{t.invoices.detail.dueDate}</div>
+            <div className={styles.fieldLabel}>{t("invoices.detail.dueDate")}</div>
             <div className={styles.fieldValue}>{formatDate(invoice.dueDate)}</div>
           </div>
         </div>
@@ -101,9 +103,9 @@ export default function InvoiceDetailPage({
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardTitle}>{t.invoices.detail.amounts}</div>
+        <div className={styles.cardTitle}>{t("invoices.detail.amounts")}</div>
         <div className={styles.amountRow}>
-          <span>{t.common.amounts.subtotalCol}</span>
+          <span>{t("common.amounts.subtotalCol")}</span>
           <span>{formatCurrency(invoice.subtotal)}</span>
         </div>
         <div className={styles.amountRow}>
@@ -111,24 +113,24 @@ export default function InvoiceDetailPage({
           <span>{formatCurrency(invoice.vat)}</span>
         </div>
         <div className={styles.amountRowTotal}>
-          <span>{t.common.amounts.totalCol}</span>
+          <span>{t("common.amounts.totalCol")}</span>
           <span>{formatCurrency(invoice.total)}</span>
         </div>
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardTitle}>{t.common.status}</div>
+        <div className={styles.cardTitle}>{t("common.status")}</div>
         <div className={styles.statusSelect}>
-          <label>{t.invoices.detail.changeStatus}</label>
+          <label>{t("invoices.detail.changeStatus")}</label>
           <select
             value={invoice.status}
             onChange={(e) =>
               updateInvoice.mutate({ id, data: { status: e.target.value as InvoiceStatus } })
             }
           >
-            {(Object.keys(t.status.invoice) as InvoiceStatus[]).map((v) => (
+            {INVOICE_STATUSES.map((v) => (
               <option key={v} value={v}>
-                {t.status.invoice[v]}
+                {t(`status.invoice.${v}` as Parameters<typeof t>[0])}
               </option>
             ))}
           </select>

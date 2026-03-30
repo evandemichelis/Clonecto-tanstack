@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { use } from "react";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { useClients, useDeleteClient } from "@/lib/queries/clients";
 import { useInvoices } from "@/lib/queries/invoices";
 import Badge, { invoiceStatusVariant } from "@/components/Badge/Badge";
 import Button from "@/components/Button/Button";
 import ClientForm from "@/components/Forms/ClientForm/ClientForm";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import styles from "./page.module.scss";
 
@@ -19,7 +19,7 @@ export default function ClientDetailPage({
 }) {
   const { id } = use(params);
   const router = useRouter();
-  const { t } = useLocale();
+  const t = useTranslations();
   const [editOpen, setEditOpen] = useState(false);
 
   const { data: clients = [] } = useClients();
@@ -35,17 +35,17 @@ export default function ClientDetailPage({
     return (
       <div className={styles.page}>
         <button className={styles.back} onClick={() => router.push("/clients")}>
-          ← Retour
+          {t("common.back")}
         </button>
         <p style={{ color: "var(--color-text-secondary)" }}>
-          {t.clients.notFound}
+          {t("clients.notFound")}
         </p>
       </div>
     );
   }
 
   async function handleDelete() {
-    if (confirm(t.clients.deleteConfirm(client!.name))) {
+    if (confirm(t("clients.deleteConfirm", { name: client!.name }))) {
       await deleteClient.mutateAsync(id);
       router.push("/clients");
     }
@@ -58,7 +58,7 @@ export default function ClientDetailPage({
       )}
 
       <button className={styles.back} onClick={() => router.push("/clients")}>
-        {t.clients.backToList}
+        {t("clients.backToList")}
       </button>
 
       <div className={styles.pageHeader}>
@@ -71,42 +71,42 @@ export default function ClientDetailPage({
         </div>
         <div className={styles.actions}>
           <Button variant="secondary" size="sm" onClick={() => setEditOpen(true)}>
-            {t.common.edit}
+            {t("common.edit")}
           </Button>
           <Button variant="danger" size="sm" onClick={handleDelete}>
-            {t.common.delete}
+            {t("common.delete")}
           </Button>
         </div>
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardTitle}>{t.clients.detail.info}</div>
+        <div className={styles.cardTitle}>{t("clients.detail.info")}</div>
         <div className={styles.grid}>
           <div className={styles.field}>
-            <div className={styles.fieldLabel}>{t.clients.form.name}</div>
+            <div className={styles.fieldLabel}>{t("clients.form.name")}</div>
             <div className={styles.fieldValue}>{client.name}</div>
           </div>
           {client.email && (
             <div className={styles.field}>
-              <div className={styles.fieldLabel}>{t.clients.form.email}</div>
+              <div className={styles.fieldLabel}>{t("clients.form.email")}</div>
               <div className={styles.fieldValue}>{client.email}</div>
             </div>
           )}
           {client.phone && (
             <div className={styles.field}>
-              <div className={styles.fieldLabel}>{t.clients.form.phone}</div>
+              <div className={styles.fieldLabel}>{t("clients.form.phone")}</div>
               <div className={styles.fieldValue}>{client.phone}</div>
             </div>
           )}
           {client.siret && (
             <div className={styles.field}>
-              <div className={styles.fieldLabel}>{t.clients.form.siret}</div>
+              <div className={styles.fieldLabel}>{t("clients.form.siret")}</div>
               <div className={styles.fieldValue}>{client.siret}</div>
             </div>
           )}
           {client.address && (
             <div className={styles.field} style={{ gridColumn: "1 / -1" }}>
-              <div className={styles.fieldLabel}>{t.clients.form.address}</div>
+              <div className={styles.fieldLabel}>{t("clients.form.address")}</div>
               <div className={styles.fieldValue}>{client.address}</div>
             </div>
           )}
@@ -114,17 +114,17 @@ export default function ClientDetailPage({
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardTitle}>{t.clients.detail.invoices(invoices.length)}</div>
+        <div className={styles.cardTitle}>{t("clients.detail.invoices", { n: invoices.length })}</div>
         {invoices.length === 0 ? (
-          <div className={styles.empty}>{t.clients.detail.noInvoices}</div>
+          <div className={styles.empty}>{t("clients.detail.noInvoices")}</div>
         ) : (
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>{t.invoices.table.number}</th>
-                <th>{t.common.date}</th>
-                <th>{t.common.amounts.totalCol}</th>
-                <th>{t.common.status}</th>
+                <th>{t("invoices.table.number")}</th>
+                <th>{t("common.date")}</th>
+                <th>{t("common.amounts.totalCol")}</th>
+                <th>{t("common.status")}</th>
               </tr>
             </thead>
             <tbody>
@@ -136,7 +136,7 @@ export default function ClientDetailPage({
                   <td>
                     <Badge
                       variant={invoiceStatusVariant[inv.status]}
-                      label={t.status.invoice[inv.status]}
+                      label={t(`status.invoice.${inv.status}` as Parameters<typeof t>[0])}
                     />
                   </td>
                 </tr>

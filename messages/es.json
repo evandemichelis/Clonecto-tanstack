@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "dashboard": "Inicio",
+    "invoices": "Facturas",
+    "expenses": "Gastos",
+    "clients": "Clientes",
+    "settings": "Ajustes"
+  },
+  "common": {
+    "search": "Buscar...",
+    "allStatuses": "Todos los estados",
+    "cancel": "Cancelar",
+    "create": "Crear",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "back": "← Volver",
+    "notes": "Notas",
+    "notesPlaceholder": "Información adicional...",
+    "seeAll": "Ver todo →",
+    "date": "Fecha",
+    "status": "Estado",
+    "amounts": {
+      "subtotal": "Importe sin IVA (€) *",
+      "vatRate": "IVA (%)",
+      "vat": "IVA (€)",
+      "total": "Total con IVA (€)",
+      "subtotalCol": "Sin IVA",
+      "totalCol": "Con IVA"
+    }
+  },
+  "status": {
+    "invoice": {
+      "to_send": "Por enviar",
+      "pending": "Pendiente",
+      "paid": "Pagada",
+      "overdue": "Vencida"
+    },
+    "expense": {
+      "to_review": "Por revisar",
+      "to_pay": "Por pagar",
+      "paid": "Pagado"
+    }
+  },
+  "dashboard": {
+    "title": "Inicio",
+    "recentInvoices": "Facturas recientes",
+    "empty": "Sin facturas por ahora",
+    "stats": {
+      "revenue": "Ingresos netos",
+      "revenueSub": "Facturas − Gastos pagados",
+      "clients": "Clientes",
+      "clientsSub": "Clientes registrados",
+      "pending": "Facturas pendientes",
+      "pendingSub": "Sin cobrar",
+      "paid": "Facturas pagadas",
+      "paidSub": "Cobradas"
+    }
+  },
+  "invoices": {
+    "title": "Facturas",
+    "new": "+ Nueva factura",
+    "createFirst": "Crear una factura",
+    "empty": "No se encontraron facturas",
+    "notFound": "Factura no encontrada.",
+    "backToList": "← Facturas",
+    "deleteConfirm": "¿Eliminar la factura {number}?",
+    "table": {
+      "number": "N°",
+      "client": "Cliente",
+      "date": "Fecha",
+      "dueDate": "Vencimiento"
+    },
+    "form": {
+      "title": "Nueva factura",
+      "editTitle": "Editar factura",
+      "client": "Cliente *",
+      "clientPlaceholder": "Nombre del cliente",
+      "date": "Fecha de factura",
+      "dueDate": "Fecha de vencimiento"
+    },
+    "detail": {
+      "info": "Información",
+      "client": "Cliente",
+      "number": "Número",
+      "date": "Fecha de factura",
+      "dueDate": "Fecha de vencimiento",
+      "amounts": "Importes",
+      "changeStatus": "Cambiar estado:"
+    }
+  },
+  "expenses": {
+    "title": "Gastos",
+    "new": "+ Nuevo gasto",
+    "createFirst": "Crear un gasto",
+    "empty": "No se encontraron gastos",
+    "notFound": "Gasto no encontrado.",
+    "backToList": "← Gastos",
+    "deleteConfirm": "¿Eliminar este gasto ({supplier})?",
+    "table": {
+      "supplier": "Proveedor"
+    },
+    "form": {
+      "title": "Nuevo gasto",
+      "editTitle": "Editar gasto",
+      "supplier": "Proveedor *",
+      "supplierPlaceholder": "Nombre del proveedor"
+    },
+    "detail": {
+      "info": "Información",
+      "supplier": "Proveedor"
+    }
+  },
+  "settings": {
+    "title": "Ajustes",
+    "appearance": {
+      "label": "Apariencia",
+      "light": "Claro",
+      "dark": "Oscuro"
+    },
+    "language": {
+      "label": "Idioma",
+      "fr": "Français",
+      "en": "English",
+      "es": "Español"
+    }
+  },
+  "clients": {
+    "title": "Clientes",
+    "new": "+ Nuevo cliente",
+    "createFirst": "Crear un cliente",
+    "empty": "No se encontraron clientes",
+    "notFound": "Cliente no encontrado.",
+    "backToList": "← Clientes",
+    "deleteConfirm": "¿Eliminar el cliente \"{name}\"?",
+    "searchPlaceholder": "Buscar un cliente...",
+    "form": {
+      "title": "Nuevo cliente",
+      "editTitle": "Editar cliente",
+      "name": "Nombre *",
+      "namePlaceholder": "Nombre del cliente o empresa",
+      "email": "Email",
+      "emailPlaceholder": "email@ejemplo.com",
+      "phone": "Teléfono",
+      "phonePlaceholder": "+34 000 000 000",
+      "siret": "NIF/CIF",
+      "siretPlaceholder": "000 000 000",
+      "address": "Dirección",
+      "addressPlaceholder": "Dirección completa"
+    },
+    "detail": {
+      "info": "Información",
+      "invoices": "Facturas ({n})",
+      "noInvoices": "Sin facturas para este cliente"
+    }
+  }
+}

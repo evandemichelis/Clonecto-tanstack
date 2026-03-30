@@ -6,7 +6,14 @@
       "Bash(ls:*)",
       "Bash(head:*)",
       "Bash(npm install:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(find /home/evandemichelis/Documents/dev/perso/kolecto-training/kolecto-clone-tanstack -not -path */node_modules/* -not -path */.next/* -not -path */.git/* -type f)",
+      "Bash(mkdir -p \"app/[locale]\")",
+      "Bash(cp -r \"app/\\(app\\)\" \"app/[locale]/\\(app\\)\")",
+      "Bash(ls \"app/[locale]/\\(app\\)/\")",
+      "Bash(grep -l \"useLocale\\\\|LocaleContext\" components/**/*.tsx app/**/**/*.tsx)",
+      "Bash(node:*)",
+      "Bash(grep -r \"createProxy\\\\|createMiddleware\" node_modules/next-intl/dist/esm/*.mjs)"
     ]
   }
 }

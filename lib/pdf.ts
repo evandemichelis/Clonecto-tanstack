@@ -1,5 +1,4 @@
 import type { Invoice, Expense } from "@/types";
-import type { Translations } from "@/locales/fr";
 import { formatCurrency, formatDate } from "./utils";
 
 const PRIMARY: [number, number, number] = [95, 99, 242];
@@ -10,7 +9,7 @@ const LIGHT: [number, number, number] = [246, 247, 255];
 // jsPDF uses WinAnsiEncoding — replace non-breaking spaces so amounts render correctly
 const fmt = (n: number) => formatCurrency(n).replace(/\u00A0/g, " ");
 
-export async function generateInvoicePDF(invoice: Invoice, t: Translations) {
+export async function generateInvoicePDF(invoice: Invoice, statusLabel: string) {
   const { default: jsPDF } = await import("jspdf");
   const { default: autoTable } = await import("jspdf-autotable");
 
@@ -40,7 +39,7 @@ export async function generateInvoicePDF(invoice: Invoice, t: Translations) {
   const meta: [string, string][] = [
     ["Date", formatDate(invoice.date)],
     ["Echeance", formatDate(invoice.dueDate)],
-    ["Statut", t.status.invoice[invoice.status]],
+    ["Statut", statusLabel],
   ];
   let y = 40;
   for (const [label, value] of meta) {
@@ -138,7 +137,7 @@ export async function generateInvoicePDF(invoice: Invoice, t: Translations) {
   doc.save(`${invoice.number}.pdf`);
 }
 
-export async function generateExpensePDF(expense: Expense, t: Translations) {
+export async function generateExpensePDF(expense: Expense, statusLabel: string) {
   const { default: jsPDF } = await import("jspdf");
   const { default: autoTable } = await import("jspdf-autotable");
 
@@ -173,7 +172,7 @@ export async function generateExpensePDF(expense: Expense, t: Translations) {
   // ── Meta info (left) ──────────────────────────────────────────
   const meta: [string, string][] = [
     ["Date", formatDate(expense.date)],
-    ["Statut", t.status.expense[expense.status]],
+    ["Statut", statusLabel],
   ];
   let y = 40;
   for (const [label, value] of meta) {

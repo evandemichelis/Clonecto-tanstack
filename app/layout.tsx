@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Providers from "./providers";
+import { getLocale } from "next-intl/server";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -7,13 +7,15 @@ export const metadata: Metadata = {
   description: "Gestion de facturation",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -21,9 +23,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
-        <Providers>{children}</Providers>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

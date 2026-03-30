@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useAddClient, useUpdateClient } from "@/lib/queries/clients";
 import Modal from "@/components/Modal/Modal";
 import Button from "@/components/Button/Button";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import { Client } from "@/types";
 import styles from "./ClientForm.module.scss";
 
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function ClientForm({ onClose, client }: Props) {
-  const { t } = useLocale();
+  const t = useTranslations();
   const addClient = useAddClient();
   const updateClient = useUpdateClient();
   const [form, setForm] = useState(() => ({
@@ -51,60 +51,60 @@ export default function ClientForm({ onClose, client }: Props) {
 
   return (
     <Modal
-      title={client ? t.clients.form.editTitle : t.clients.form.title}
+      title={client ? t("clients.form.editTitle") : t("clients.form.title")}
       onClose={onClose}
       footer={
         <>
           <Button variant="secondary" onClick={onClose}>
-            {t.common.cancel}
+            {t("common.cancel")}
           </Button>
           <Button onClick={handleSubmit}>
-            {client ? t.common.edit : t.common.create}
+            {client ? t("common.edit") : t("common.create")}
           </Button>
         </>
       }
     >
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label>{t.clients.form.name}</label>
+          <label>{t("clients.form.name")}</label>
           <input
             type="text"
-            placeholder={t.clients.form.namePlaceholder}
+            placeholder={t("clients.form.namePlaceholder")}
             {...field("name")}
             required
           />
         </div>
         <div className={styles.formGroup}>
-          <label>{t.clients.form.email}</label>
+          <label>{t("clients.form.email")}</label>
           <input
             type="email"
-            placeholder={t.clients.form.emailPlaceholder}
+            placeholder={t("clients.form.emailPlaceholder")}
             {...field("email")}
           />
         </div>
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
-            <label>{t.clients.form.phone}</label>
+            <label>{t("clients.form.phone")}</label>
             <input
               type="tel"
-              placeholder={t.clients.form.phonePlaceholder}
+              placeholder={t("clients.form.phonePlaceholder")}
               {...field("phone")}
             />
           </div>
           <div className={styles.formGroup}>
-            <label>{t.clients.form.siret}</label>
+            <label>{t("clients.form.siret")}</label>
             <input
               type="text"
-              placeholder={t.clients.form.siretPlaceholder}
+              placeholder={t("clients.form.siretPlaceholder")}
               {...field("siret")}
             />
           </div>
         </div>
         <div className={styles.formGroup}>
-          <label>{t.clients.form.address}</label>
+          <label>{t("clients.form.address")}</label>
           <input
             type="text"
-            placeholder={t.clients.form.addressPlaceholder}
+            placeholder={t("clients.form.addressPlaceholder")}
             {...field("address")}
           />
         </div>

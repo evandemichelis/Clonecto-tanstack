@@ -1,47 +1,56 @@
 "use client";
 
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { useTheme } from "@/lib/theme/ThemeContext";
-import { useLocale, type Locale } from "@/lib/locale/LocaleContext";
+import { routing, type Locale } from "@/i18n/routing";
 import styles from "./page.module.scss";
 
 export default function SettingsPage() {
   const { theme, toggleTheme } = useTheme();
-  const { t, locale, setLocale } = useLocale();
+  const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  function handleLocaleChange(newLocale: Locale) {
+    router.replace(pathname, { locale: newLocale });
+  }
 
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1>{t.settings.title}</h1>
+        <h1>{t("settings.title")}</h1>
       </div>
 
       <div className={styles.section}>
-        <h2>{t.settings.appearance.label}</h2>
+        <h2>{t("settings.appearance.label")}</h2>
         <div className={styles.options}>
           <button
             className={`${styles.option} ${theme === "light" ? styles.active : ""}`}
             onClick={() => theme !== "light" && toggleTheme()}
           >
-            {t.settings.appearance.light}
+            {t("settings.appearance.light")}
           </button>
           <button
             className={`${styles.option} ${theme === "dark" ? styles.active : ""}`}
             onClick={() => theme !== "dark" && toggleTheme()}
           >
-            {t.settings.appearance.dark}
+            {t("settings.appearance.dark")}
           </button>
         </div>
       </div>
 
       <div className={styles.section}>
-        <h2>{t.settings.language.label}</h2>
+        <h2>{t("settings.language.label")}</h2>
         <div className={styles.options}>
-          {(["fr", "en"] as Locale[]).map((l) => (
+          {routing.locales.map((l) => (
             <button
               key={l}
               className={`${styles.option} ${locale === l ? styles.active : ""}`}
-              onClick={() => setLocale(l)}
+              onClick={() => handleLocaleChange(l)}
             >
-              {t.settings.language[l]}
+              {t(`settings.language.${l}` as Parameters<typeof t>[0])}
             </button>
           ))}
         </div>

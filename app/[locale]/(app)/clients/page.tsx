@@ -1,16 +1,16 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { useClients } from "@/lib/queries/clients";
 import Button from "@/components/Button/Button";
 import ClientForm from "@/components/Forms/ClientForm/ClientForm";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import styles from "./page.module.scss";
 
 export default function ClientsPage() {
   const router = useRouter();
-  const { t } = useLocale();
+  const t = useTranslations();
   const { data: clients = [] } = useClients();
 
   const [showModal, setShowModal] = useState(false);
@@ -29,14 +29,14 @@ export default function ClientsPage() {
   return (
     <div className={styles.page}>
       <div className={styles.pageHeader}>
-        <h1>{t.clients.title}</h1>
-        <Button onClick={() => setShowModal(true)}>{t.clients.new}</Button>
+        <h1>{t("clients.title")}</h1>
+        <Button onClick={() => setShowModal(true)}>{t("clients.new")}</Button>
       </div>
 
       <div className={styles.toolbar}>
         <input
           type="text"
-          placeholder={t.clients.searchPlaceholder}
+          placeholder={t("clients.searchPlaceholder")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -45,9 +45,9 @@ export default function ClientsPage() {
       <div className={styles.grid}>
         {filtered.length === 0 ? (
           <div className={styles.empty}>
-            <p>{t.clients.empty}</p>
+            <p>{t("clients.empty")}</p>
             <Button onClick={() => setShowModal(true)}>
-              {t.clients.createFirst}
+              {t("clients.createFirst")}
             </Button>
           </div>
         ) : (

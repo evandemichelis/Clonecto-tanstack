@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useAddExpense, useUpdateExpense } from "@/lib/queries/expenses";
 import Modal from "@/components/Modal/Modal";
 import Button from "@/components/Button/Button";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import { Expense } from "@/types";
 import { computeAmounts, formatCurrency, today } from "@/lib/utils";
 import styles from "./ExpenseForm.module.scss";
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default function ExpenseForm({ onClose, expense }: Props) {
-  const { t } = useLocale();
+  const t = useTranslations();
   const addExpense = useAddExpense();
   const updateExpense = useUpdateExpense();
   const [form, setForm] = useState(() => ({
@@ -59,36 +59,36 @@ export default function ExpenseForm({ onClose, expense }: Props) {
 
   return (
     <Modal
-      title={expense ? t.expenses.form.editTitle : t.expenses.form.title}
+      title={expense ? t("expenses.form.editTitle") : t("expenses.form.title")}
       onClose={onClose}
       footer={
         <>
           <Button variant="secondary" onClick={onClose}>
-            {t.common.cancel}
+            {t("common.cancel")}
           </Button>
           <Button onClick={handleSubmit}>
-            {expense ? t.common.edit : t.common.create}
+            {expense ? t("common.edit") : t("common.create")}
           </Button>
         </>
       }
     >
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label>{t.expenses.form.supplier}</label>
+          <label>{t("expenses.form.supplier")}</label>
           <input
             type="text"
-            placeholder={t.expenses.form.supplierPlaceholder}
+            placeholder={t("expenses.form.supplierPlaceholder")}
             {...field("supplier")}
             required
           />
         </div>
         <div className={styles.formGroup}>
-          <label>{t.common.date}</label>
+          <label>{t("common.date")}</label>
           <input type="date" {...field("date")} />
         </div>
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
-            <label>{t.common.amounts.subtotal}</label>
+            <label>{t("common.amounts.subtotal")}</label>
             <input
               type="number"
               min="0"
@@ -99,7 +99,7 @@ export default function ExpenseForm({ onClose, expense }: Props) {
             />
           </div>
           <div className={styles.formGroup}>
-            <label>{t.common.amounts.vatRate}</label>
+            <label>{t("common.amounts.vatRate")}</label>
             <input
               type="number"
               min="0"
@@ -111,18 +111,18 @@ export default function ExpenseForm({ onClose, expense }: Props) {
         </div>
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
-            <label>{t.common.amounts.vat}</label>
+            <label>{t("common.amounts.vat")}</label>
             <div className={styles.computed}>{formatCurrency(vat)}</div>
           </div>
           <div className={styles.formGroup}>
-            <label>{t.common.amounts.total}</label>
+            <label>{t("common.amounts.total")}</label>
             <div className={styles.computed}>{formatCurrency(total)}</div>
           </div>
         </div>
         <div className={styles.formGroup}>
-          <label>{t.common.notes}</label>
+          <label>{t("common.notes")}</label>
           <textarea
-            placeholder={t.common.notesPlaceholder}
+            placeholder={t("common.notesPlaceholder")}
             {...field("notes")}
           />
         </div>

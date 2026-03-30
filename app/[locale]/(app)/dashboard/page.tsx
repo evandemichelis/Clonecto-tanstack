@@ -1,20 +1,19 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, useRouter } from "@/i18n/navigation";
 import { CircleDollarSign, Users, Clock, CheckCheck } from "lucide-react";
 import { useInvoices } from "@/lib/queries/invoices";
 import { useExpenses } from "@/lib/queries/expenses";
 import { useClients } from "@/lib/queries/clients";
 import Badge, { invoiceStatusVariant } from "@/components/Badge/Badge";
 import StatCard from "@/components/StatCard/StatCard";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import styles from "./page.module.scss";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { t } = useLocale();
+  const t = useTranslations();
   const { data: invoices = [] } = useInvoices();
   const { data: expenses = [] } = useExpenses();
   const { data: clients = [] } = useClients();
@@ -37,58 +36,58 @@ export default function DashboardPage() {
   return (
     <div className={styles.page}>
       <div className={styles.header}>
-        <h1>{t.dashboard.title}</h1>
+        <h1>{t("dashboard.title")}</h1>
         <p>{dateLabel.charAt(0).toUpperCase() + dateLabel.slice(1)}</p>
       </div>
 
       <div className={styles.stats}>
         <StatCard
-          label={t.dashboard.stats.revenue}
+          label={t("dashboard.stats.revenue")}
           value={formatCurrency(revenue - costs)}
-          sub={t.dashboard.stats.revenueSub}
+          sub={t("dashboard.stats.revenueSub")}
           icon={<CircleDollarSign size={20} />}
         />
         <StatCard
-          label={t.dashboard.stats.clients}
+          label={t("dashboard.stats.clients")}
           value={clients.length}
-          sub={t.dashboard.stats.clientsSub}
+          sub={t("dashboard.stats.clientsSub")}
           icon={<Users size={20} />}
         />
         <StatCard
-          label={t.dashboard.stats.pending}
+          label={t("dashboard.stats.pending")}
           value={invoices.length - paidInvoices.length}
-          sub={t.dashboard.stats.pendingSub}
+          sub={t("dashboard.stats.pendingSub")}
           icon={<Clock size={20} />}
         />
         <StatCard
-          label={t.dashboard.stats.paid}
+          label={t("dashboard.stats.paid")}
           value={paidInvoices.length}
-          sub={t.dashboard.stats.paidSub}
+          sub={t("dashboard.stats.paidSub")}
           icon={<CheckCheck size={20} />}
         />
       </div>
 
       <div className={styles.section}>
         <div className={styles.sectionHeader}>
-          <h2>{t.dashboard.recentInvoices}</h2>
+          <h2>{t("dashboard.recentInvoices")}</h2>
           <Link
             href="/invoices"
             style={{ fontSize: 13, color: "var(--color-primary)" }}
           >
-            {t.common.seeAll}
+            {t("common.seeAll")}
           </Link>
         </div>
         {invoices.length === 0 ? (
-          <div className={styles.empty}>{t.dashboard.empty}</div>
+          <div className={styles.empty}>{t("dashboard.empty")}</div>
         ) : (
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>{t.invoices.table.number}</th>
-                <th>{t.invoices.table.client}</th>
-                <th>{t.invoices.table.date}</th>
-                <th>{t.common.amounts.totalCol}</th>
-                <th>{t.common.status}</th>
+                <th>{t("invoices.table.number")}</th>
+                <th>{t("invoices.table.client")}</th>
+                <th>{t("invoices.table.date")}</th>
+                <th>{t("common.amounts.totalCol")}</th>
+                <th>{t("common.status")}</th>
               </tr>
             </thead>
             <tbody>
@@ -104,7 +103,7 @@ export default function DashboardPage() {
                   <td>
                     <Badge
                       variant={invoiceStatusVariant[inv.status]}
-                      label={t.status.invoice[inv.status]}
+                      label={t(`status.invoice.${inv.status}` as Parameters<typeof t>[0])}
                     />
                   </td>
                 </tr>

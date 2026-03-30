@@ -2,7 +2,6 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "@/lib/theme/ThemeContext";
-import { LocaleProvider } from "@/lib/locale/LocaleContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,11 +18,7 @@ const queryClient = new QueryClient({
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
-      <LocaleProvider>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-      </LocaleProvider>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </ThemeProvider>
   );
 }

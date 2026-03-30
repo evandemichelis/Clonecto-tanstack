@@ -1,20 +1,22 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { FileDown } from "lucide-react";
 import { useInvoices } from "@/lib/queries/invoices";
 import Badge, { invoiceStatusVariant } from "@/components/Badge/Badge";
 import Button from "@/components/Button/Button";
 import InvoiceForm from "@/components/Forms/InvoiceForm/InvoiceForm";
-import { useLocale } from "@/lib/locale/LocaleContext";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { InvoiceStatus } from "@/types";
 import styles from "./page.module.scss";
 
+const INVOICE_STATUSES = ["to_send", "pending", "paid", "overdue"] as const;
+
 export default function InvoicesPage() {
   const router = useRouter();
-  const { t } = useLocale();
+  const t = useTranslations();
   const { data: invoices = [] } = useInvoices();
 
   const [showModal, setShowModal] = useState(false);
@@ -22,11 +24,11 @@ export default function InvoicesPage() {
   const [statusFilter, setStatusFilter] = useState<InvoiceStatus | "">("");
 
   const STATUS_OPTIONS = [
-    { value: "" as const, label: t.common.allStatuses },
-    { value: "to_send" as const, label: t.status.invoice.to_send },
-    { value: "pending" as const, label: t.status.invoice.pending },
-    { value: "paid" as const, label: t.status.invoice.paid },
-    { value: "overdue" as const, label: t.status.invoice.overdue },
+    { value: "" as const, label: t("common.allStatuses") },
+    ...INVOICE_STATUSES.map((s) => ({
+      value: s,
+      label: t(`status.invoice.${s}` as Parameters<typeof t>[0]),
+    })),
   ];
 
   const filtered = useMemo(
@@ -43,14 +45,14 @@ export default function InvoicesPage() {
   return (
     <div className={styles.page}>
       <div className={styles.pageHeader}>
-        <h1>{t.invoices.title}</h1>
-        <Button onClick={() => setShowModal(true)}>{t.invoices.new}</Button>
+        <h1>{t("invoices.title")}</h1>
+        <Button onClick={() => setShowModal(true)}>{t("invoices.new")}</Button>
       </div>
 
       <div className={styles.toolbar}>
         <input
           type="text"
-          placeholder={t.common.search}
+          placeholder={t("common.search")}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -71,10 +73,10 @@ export default function InvoicesPage() {
       <div className={styles.card}>
         {filtered.length === 0 ? (
           <div className={styles.empty}>
-            <p>{t.invoices.empty}</p>
+            <p>{t("invoices.empty")}</p>
             {invoices.length === 0 && (
               <Button onClick={() => setShowModal(true)}>
-                {t.invoices.createFirst}
+                {t("invoices.createFirst")}
               </Button>
             )}
           </div>
@@ -82,13 +84,13 @@ export default function InvoicesPage() {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>{t.invoices.table.number}</th>
-                <th>{t.invoices.table.client}</th>
-                <th>{t.invoices.table.date}</th>
-                <th>{t.invoices.table.dueDate}</th>
-                <th>{t.common.amounts.subtotalCol}</th>
-                <th>{t.common.amounts.totalCol}</th>
-                <th>{t.common.status}</th>
+                <th>{t("invoices.table.number")}</th>
+                <th>{t("invoices.table.client")}</th>
+                <th>{t("invoices.table.date")}</th>
+                <th>{t("invoices.table.dueDate")}</th>
+                <th>{t("common.amounts.subtotalCol")}</th>
+                <th>{t("common.amounts.totalCol")}</th>
+                <th>{t("common.status")}</th>
                 <th className={styles.actionCol}></th>
               </tr>
             </thead>
@@ -109,7 +111,7 @@ export default function InvoicesPage() {
                   <td>
                     <Badge
                       variant={invoiceStatusVariant[inv.status]}
-                      label={t.status.invoice[inv.status]}
+                      label={t(`status.invoice.${inv.status}` as Parameters<typeof t>[0])}
                     />
                   </td>
                   <td className={styles.actionCol}>
@@ -118,7 +120,7 @@ export default function InvoicesPage() {
                       onClick={async (e) => {
                         e.stopPropagation();
                         const { generateInvoicePDF } = await import("@/lib/pdf");
-                        generateInvoicePDF(inv, t);
+                        generateInvoicePDF(inv, t(`status.invoice.${inv.status}` as Parameters<typeof t>[0]));
                       }}
                     >
                       <FileDown />
