@@ -1,0 +1,19 @@
+import styles from "./StatCard.module.scss";
+
+interface StatCardProps {
+  label: string;
+  value: string | number;
+  sub?: string;
+  icon: React.ReactNode;
+}
+
+export default function StatCard({ label, value, sub, icon }: StatCardProps) {
+  return (
+    <div className={styles.card}>
+      <div className={styles.iconWrapper}>{icon}</div>
+      <div className={styles.label}>{label}</div>
+      <div className={styles.value}>{value}</div>
+      {sub && <div className={styles.sub}>{sub}</div>}
+    </div>
+  );
+}

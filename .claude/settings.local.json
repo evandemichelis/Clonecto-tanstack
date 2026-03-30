@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /home/evandemichelis/Documents/dev/perso/kolecto-training/kolecto-clone-tanstack/app/\\\\\\(app\\\\\\)/invoices/)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(head:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)"
+    ]
+  }
+}

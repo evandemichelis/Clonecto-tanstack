@@ -1,0 +1,53 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    color: var(--color-text);
+    background: var(--color-input-bg);
+    outline: none;
+    transition:
+      border-color 0.15s,
+      box-shadow 0.15s;
+    width: 100%;
+
+    &:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(95, 99, 242, 0.15);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.computed {
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  background: var(--color-table-header);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}

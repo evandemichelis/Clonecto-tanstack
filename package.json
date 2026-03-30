@@ -1,0 +1,35 @@
+{
+  "name": "kolecto-clone",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"next dev\" \"npm run server\"",
+    "server": "json-server db.json --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.95.2",
+    "jspdf": "^4.2.0",
+    "jspdf-autotable": "^5.0.7",
+    "ky": "^1.14.3",
+    "lucide-react": "^0.577.0",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "sass": "^1.97.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "json-server": "^1.0.0-beta.12",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

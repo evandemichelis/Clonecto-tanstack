@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  min-height: 100vh;
+  min-width: 0;
+  background: var(--color-bg);
+  padding: 28px 32px;
+}

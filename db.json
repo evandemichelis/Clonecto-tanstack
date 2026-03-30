@@ -1,0 +1,175 @@
+{
+  "invoices": [
+    {
+      "id": "d901",
+      "number": "FAC-2026-001",
+      "clientName": "jean",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 12,
+      "vatRate": 20,
+      "vat": 2.4,
+      "total": 14.4,
+      "status": "paid",
+      "notes": "jeanjean"
+    },
+    {
+      "id": "d801",
+      "number": "FAC-2026-001",
+      "clientName": "jean",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 12,
+      "vatRate": 20,
+      "vat": 2.4,
+      "total": 14.4,
+      "status": "paid",
+      "notes": "jeanjean"
+    },
+    {
+      "id": "u841",
+      "number": "FAC-2026-001",
+      "clientName": "jean",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 12,
+      "vatRate": 20,
+      "vat": 2.4,
+      "total": 14.4,
+      "status": "paid",
+      "notes": "jeanjean"
+    },
+    {
+      "id": "e2bf",
+      "number": "FAC-2026-002",
+      "clientName": "fghdfgh",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 23,
+      "vatRate": 20,
+      "vat": 4.6,
+      "total": 27.6,
+      "status": "paid",
+      "notes": "dfghdfgh"
+    },
+    {
+      "id": "b3f8",
+      "number": "FAC-2026-003",
+      "clientName": "hgj;j;",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 213,
+      "vatRate": 60,
+      "vat": 127.8,
+      "total": 340.8,
+      "status": "paid",
+      "notes": ""
+    },
+    {
+      "id": "2455",
+      "number": "FAC-2026-004",
+      "clientName": "jhk;hjk;",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 40,
+      "vatRate": 20,
+      "vat": 8,
+      "total": 48,
+      "status": "to_send",
+      "notes": ""
+    },
+    {
+      "id": "bd8d",
+      "number": "FAC-2026-007",
+      "clientName": "gfhnfg",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 24,
+      "vatRate": 20,
+      "vat": 4.8,
+      "total": 28.8,
+      "status": "to_send",
+      "notes": ""
+    },
+    {
+      "id": "4a36",
+      "number": "FAC-2026-008",
+      "clientName": "lm!",
+      "date": "2026-03-08",
+      "dueDate": "2026-04-07",
+      "subtotal": 1,
+      "vatRate": 20,
+      "vat": 0.2,
+      "total": 1.2,
+      "status": "to_send",
+      "notes": "5."
+    },
+    {
+      "clientName": "JeanMichel",
+      "date": "2026-03-27",
+      "dueDate": "2026-04-26",
+      "subtotal": 100,
+      "vatRate": 20,
+      "vat": 20,
+      "total": 120,
+      "notes": "",
+      "number": "FAC-2026-009",
+      "status": "to_send",
+      "id": "CGPDet3XQAE"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "f823",
+      "supplier": "Modified",
+      "date": "2026-03-08",
+      "subtotal": 750,
+      "vatRate": 20,
+      "vat": 150,
+      "total": 900,
+      "status": "to_review",
+      "notes": ""
+    },
+    {
+      "id": "bd01",
+      "supplier": "zetrty",
+      "date": "2026-03-08",
+      "subtotal": 50,
+      "vatRate": 20,
+      "vat": 10,
+      "total": 60,
+      "status": "to_review",
+      "notes": ""
+    },
+    {
+      "id": "007c",
+      "supplier": "bjkljk",
+      "date": "2026-03-08",
+      "subtotal": 14,
+      "vatRate": 20,
+      "vat": 2.8,
+      "total": 16.8,
+      "status": "to_review",
+      "notes": ""
+    }
+  ],
+  "clients": [
+    {
+      "id": "a08f",
+      "name": "James Hetfield",
+      "email": "metallica@gmail.yeahyeahhhh",
+      "phone": "0606060606",
+      "address": "Los Angeles",
+      "siret": "12312312345"
+    },
+    {
+      "id": "96c2",
+      "name": "Charlie Chaplin",
+      "email": "charlie.chaplin@gmail.com",
+      "phone": "0606060606",
+      "address": "London",
+      "siret": "12312312345654"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
