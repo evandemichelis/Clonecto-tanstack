@@ -1,0 +1,110 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Clonecto" [ref=e5] [cursor=pointer]:
+        - /url: /en/dashboard
+        - img [ref=e7]
+        - generic [ref=e11]: Clonecto
+      - navigation [ref=e12]:
+        - link "Home" [ref=e13] [cursor=pointer]:
+          - /url: /en/dashboard
+          - img [ref=e14]
+          - text: Home
+        - link "Invoices" [ref=e19] [cursor=pointer]:
+          - /url: /en/invoices
+          - img [ref=e20]
+          - text: Invoices
+        - link "Expenses" [ref=e23] [cursor=pointer]:
+          - /url: /en/expenses
+          - img [ref=e24]
+          - text: Expenses
+        - link "Clients" [ref=e27] [cursor=pointer]:
+          - /url: /en/clients
+          - img [ref=e28]
+          - text: Clients
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /en/settings
+        - img [ref=e35]
+        - text: Settings
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - heading "Home" [level=1] [ref=e41]
+          - paragraph [ref=e42]: Mardi 31 mars 2026
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - img [ref=e46]
+            - generic [ref=e49]: Net revenue
+            - generic [ref=e50]: 459,60 €
+            - generic [ref=e51]: Invoices − Paid expenses
+          - generic [ref=e52]:
+            - img [ref=e54]
+            - generic [ref=e59]: Clients
+            - generic [ref=e60]: "2"
+            - generic [ref=e61]: Registered clients
+          - generic [ref=e62]:
+            - img [ref=e64]
+            - generic [ref=e67]: Pending invoices
+            - generic [ref=e68]: "4"
+            - generic [ref=e69]: Unpaid
+          - generic [ref=e70]:
+            - img [ref=e72]
+            - generic [ref=e75]: Paid invoices
+            - generic [ref=e76]: "7"
+            - generic [ref=e77]: Collected
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - heading "Recent invoices" [level=2] [ref=e80]
+            - link "See all →" [ref=e81] [cursor=pointer]:
+              - /url: /en/invoices
+          - table [ref=e83]:
+            - rowgroup [ref=e84]:
+              - row "No. Client Date Incl. tax Status" [ref=e85]:
+                - columnheader "No." [ref=e86]
+                - columnheader "Client" [ref=e87]
+                - columnheader "Date" [ref=e88]
+                - columnheader "Incl. tax" [ref=e89]
+                - columnheader "Status" [ref=e90]
+            - rowgroup [ref=e91]:
+              - row "FAC-2026-001 jean 08/03/2026 14,40 € Paid" [ref=e92]:
+                - cell "FAC-2026-001" [ref=e93]
+                - cell "jean" [ref=e94]
+                - cell "08/03/2026" [ref=e95]
+                - cell "14,40 €" [ref=e96]
+                - cell "Paid" [ref=e97]:
+                  - generic [ref=e98]: Paid
+              - row "FAC-2026-001 jean 08/03/2026 14,40 € Paid" [ref=e99]:
+                - cell "FAC-2026-001" [ref=e100]
+                - cell "jean" [ref=e101]
+                - cell "08/03/2026" [ref=e102]
+                - cell "14,40 €" [ref=e103]
+                - cell "Paid" [ref=e104]:
+                  - generic [ref=e105]: Paid
+              - row "FAC-2026-001 jean 08/03/2026 14,40 € Paid" [ref=e106]:
+                - cell "FAC-2026-001" [ref=e107]
+                - cell "jean" [ref=e108]
+                - cell "08/03/2026" [ref=e109]
+                - cell "14,40 €" [ref=e110]
+                - cell "Paid" [ref=e111]:
+                  - generic [ref=e112]: Paid
+              - row "FAC-2026-002 fghdfgh 08/03/2026 27,60 € Paid" [ref=e113]:
+                - cell "FAC-2026-002" [ref=e114]
+                - cell "fghdfgh" [ref=e115]
+                - cell "08/03/2026" [ref=e116]
+                - cell "27,60 €" [ref=e117]
+                - cell "Paid" [ref=e118]:
+                  - generic [ref=e119]: Paid
+              - row "FAC-2026-003 hgj;j; 08/03/2026 340,80 € Paid" [ref=e120]:
+                - cell "FAC-2026-003" [ref=e121]
+                - cell "hgj;j;" [ref=e122]
+                - cell "08/03/2026" [ref=e123]
+                - cell "340,80 €" [ref=e124]
+                - cell "Paid" [ref=e125]:
+                  - generic [ref=e126]: Paid
+  - button "Open Next.js Dev Tools" [ref=e132] [cursor=pointer]:
+    - img [ref=e133]
+  - alert [ref=e136]
+```

@@ -1,0 +1,192 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Clonecto" [ref=e5] [cursor=pointer]:
+        - /url: /fr/dashboard
+        - img [ref=e7]
+        - generic [ref=e11]: Clonecto
+      - navigation [ref=e12]:
+        - link "Accueil" [ref=e13] [cursor=pointer]:
+          - /url: /fr/dashboard
+          - img [ref=e14]
+          - text: Accueil
+        - link "Encaissements" [ref=e19] [cursor=pointer]:
+          - /url: /fr/invoices
+          - img [ref=e20]
+          - text: Encaissements
+        - link "Dépenses" [ref=e23] [cursor=pointer]:
+          - /url: /fr/expenses
+          - img [ref=e24]
+          - text: Dépenses
+        - link "Clients" [ref=e27] [cursor=pointer]:
+          - /url: /fr/clients
+          - img [ref=e28]
+          - text: Clients
+      - link "Paramètres" [ref=e34] [cursor=pointer]:
+        - /url: /fr/settings
+        - img [ref=e35]
+        - text: Paramètres
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - heading "Encaissements" [level=1] [ref=e41]
+          - button "+ Nouvelle facture" [ref=e42] [cursor=pointer]
+        - generic [ref=e43]:
+          - textbox "Rechercher..." [ref=e44]
+          - combobox [ref=e45] [cursor=pointer]:
+            - option "Tous les statuts" [selected]
+            - option "À envoyer"
+            - option "En attente"
+            - option "Payée"
+            - option "En retard"
+        - table [ref=e48]:
+          - rowgroup [ref=e49]:
+            - row "N° Client Date Échéance Montant HT Montant TTC Statut" [ref=e50]:
+              - columnheader "N°" [ref=e51]
+              - columnheader "Client" [ref=e52]
+              - columnheader "Date" [ref=e53]
+              - columnheader "Échéance" [ref=e54]
+              - columnheader "Montant HT" [ref=e55]
+              - columnheader "Montant TTC" [ref=e56]
+              - columnheader "Statut" [ref=e57]
+              - columnheader [ref=e58]
+          - rowgroup [ref=e59]:
+            - row "FAC-2026-001 jean 08/03/2026 07/04/2026 12,00 € 14,40 € Payée" [ref=e60] [cursor=pointer]:
+              - cell "FAC-2026-001" [ref=e61]
+              - cell "jean" [ref=e62]
+              - cell "08/03/2026" [ref=e63]
+              - cell "07/04/2026" [ref=e64]
+              - cell "12,00 €" [ref=e65]
+              - cell "14,40 €" [ref=e66]
+              - cell "Payée" [ref=e67]:
+                - generic [ref=e68]: Payée
+              - cell [ref=e69]:
+                - button [ref=e70]:
+                  - img [ref=e71]
+            - row "FAC-2026-001 jean 08/03/2026 07/04/2026 12,00 € 14,40 € Payée" [ref=e75] [cursor=pointer]:
+              - cell "FAC-2026-001" [ref=e76]
+              - cell "jean" [ref=e77]
+              - cell "08/03/2026" [ref=e78]
+              - cell "07/04/2026" [ref=e79]
+              - cell "12,00 €" [ref=e80]
+              - cell "14,40 €" [ref=e81]
+              - cell "Payée" [ref=e82]:
+                - generic [ref=e83]: Payée
+              - cell [ref=e84]:
+                - button [ref=e85]:
+                  - img [ref=e86]
+            - row "FAC-2026-001 jean 08/03/2026 07/04/2026 12,00 € 14,40 € Payée" [ref=e90] [cursor=pointer]:
+              - cell "FAC-2026-001" [ref=e91]
+              - cell "jean" [ref=e92]
+              - cell "08/03/2026" [ref=e93]
+              - cell "07/04/2026" [ref=e94]
+              - cell "12,00 €" [ref=e95]
+              - cell "14,40 €" [ref=e96]
+              - cell "Payée" [ref=e97]:
+                - generic [ref=e98]: Payée
+              - cell [ref=e99]:
+                - button [ref=e100]:
+                  - img [ref=e101]
+            - row "FAC-2026-002 fghdfgh 08/03/2026 07/04/2026 23,00 € 27,60 € Payée" [ref=e105] [cursor=pointer]:
+              - cell "FAC-2026-002" [ref=e106]
+              - cell "fghdfgh" [ref=e107]
+              - cell "08/03/2026" [ref=e108]
+              - cell "07/04/2026" [ref=e109]
+              - cell "23,00 €" [ref=e110]
+              - cell "27,60 €" [ref=e111]
+              - cell "Payée" [ref=e112]:
+                - generic [ref=e113]: Payée
+              - cell [ref=e114]:
+                - button [ref=e115]:
+                  - img [ref=e116]
+            - row "FAC-2026-003 hgj;j; 08/03/2026 07/04/2026 213,00 € 340,80 € Payée" [ref=e120] [cursor=pointer]:
+              - cell "FAC-2026-003" [ref=e121]
+              - cell "hgj;j;" [ref=e122]
+              - cell "08/03/2026" [ref=e123]
+              - cell "07/04/2026" [ref=e124]
+              - cell "213,00 €" [ref=e125]
+              - cell "340,80 €" [ref=e126]
+              - cell "Payée" [ref=e127]:
+                - generic [ref=e128]: Payée
+              - cell [ref=e129]:
+                - button [ref=e130]:
+                  - img [ref=e131]
+            - row "FAC-2026-004 jhk;hjk; 08/03/2026 07/04/2026 40,00 € 48,00 € À envoyer" [ref=e135] [cursor=pointer]:
+              - cell "FAC-2026-004" [ref=e136]
+              - cell "jhk;hjk;" [ref=e137]
+              - cell "08/03/2026" [ref=e138]
+              - cell "07/04/2026" [ref=e139]
+              - cell "40,00 €" [ref=e140]
+              - cell "48,00 €" [ref=e141]
+              - cell "À envoyer" [ref=e142]:
+                - generic [ref=e143]: À envoyer
+              - cell [ref=e144]:
+                - button [ref=e145]:
+                  - img [ref=e146]
+            - row "FAC-2026-007 gfhnfg 08/03/2026 07/04/2026 24,00 € 28,80 € À envoyer" [ref=e150] [cursor=pointer]:
+              - cell "FAC-2026-007" [ref=e151]
+              - cell "gfhnfg" [ref=e152]
+              - cell "08/03/2026" [ref=e153]
+              - cell "07/04/2026" [ref=e154]
+              - cell "24,00 €" [ref=e155]
+              - cell "28,80 €" [ref=e156]
+              - cell "À envoyer" [ref=e157]:
+                - generic [ref=e158]: À envoyer
+              - cell [ref=e159]:
+                - button [ref=e160]:
+                  - img [ref=e161]
+            - row "FAC-2026-008 lm! 08/03/2026 07/04/2026 1,00 € 1,20 € À envoyer" [ref=e165] [cursor=pointer]:
+              - cell "FAC-2026-008" [ref=e166]
+              - cell "lm!" [ref=e167]
+              - cell "08/03/2026" [ref=e168]
+              - cell "07/04/2026" [ref=e169]
+              - cell "1,00 €" [ref=e170]
+              - cell "1,20 €" [ref=e171]
+              - cell "À envoyer" [ref=e172]:
+                - generic [ref=e173]: À envoyer
+              - cell [ref=e174]:
+                - button [ref=e175]:
+                  - img [ref=e176]
+            - row "FAC-2026-009 JeanMichel 27/03/2026 26/04/2026 100,00 € 120,00 € À envoyer" [ref=e180] [cursor=pointer]:
+              - cell "FAC-2026-009" [ref=e181]
+              - cell "JeanMichel" [ref=e182]
+              - cell "27/03/2026" [ref=e183]
+              - cell "26/04/2026" [ref=e184]
+              - cell "100,00 €" [ref=e185]
+              - cell "120,00 €" [ref=e186]
+              - cell "À envoyer" [ref=e187]:
+                - generic [ref=e188]: À envoyer
+              - cell [ref=e189]:
+                - button [ref=e190]:
+                  - img [ref=e191]
+            - row "FAC-2026-010 John Cena Jr 30/03/2026 29/04/2026 12,00 € 14,40 € Payée" [ref=e195] [cursor=pointer]:
+              - cell "FAC-2026-010" [ref=e196]
+              - cell "John Cena Jr" [ref=e197]
+              - cell "30/03/2026" [ref=e198]
+              - cell "29/04/2026" [ref=e199]
+              - cell "12,00 €" [ref=e200]
+              - cell "14,40 €" [ref=e201]
+              - cell "Payée" [ref=e202]:
+                - generic [ref=e203]: Payée
+              - cell [ref=e204]:
+                - button [ref=e205]:
+                  - img [ref=e206]
+            - row "FAC-2026-011 John 30/03/2026 29/04/2026 28,00 € 33,60 € Payée" [ref=e210] [cursor=pointer]:
+              - cell "FAC-2026-011" [ref=e211]
+              - cell "John" [ref=e212]
+              - cell "30/03/2026" [ref=e213]
+              - cell "29/04/2026" [ref=e214]
+              - cell "28,00 €" [ref=e215]
+              - cell "33,60 €" [ref=e216]
+              - cell "Payée" [ref=e217]:
+                - generic [ref=e218]: Payée
+              - cell [ref=e219]:
+                - button [ref=e220]:
+                  - img [ref=e221]
+  - button "Open Next.js Dev Tools" [ref=e230] [cursor=pointer]:
+    - img [ref=e231]
+  - alert [ref=e234]
+```

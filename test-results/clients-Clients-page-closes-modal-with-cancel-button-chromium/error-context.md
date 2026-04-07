@@ -1,0 +1,54 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary [ref=e3]:
+      - link "Clonecto" [ref=e5] [cursor=pointer]:
+        - /url: /fr/dashboard
+        - img [ref=e7]
+        - generic [ref=e11]: Clonecto
+      - navigation [ref=e12]:
+        - link "Accueil" [ref=e13] [cursor=pointer]:
+          - /url: /fr/dashboard
+          - img [ref=e14]
+          - text: Accueil
+        - link "Encaissements" [ref=e19] [cursor=pointer]:
+          - /url: /fr/invoices
+          - img [ref=e20]
+          - text: Encaissements
+        - link "Dépenses" [ref=e23] [cursor=pointer]:
+          - /url: /fr/expenses
+          - img [ref=e24]
+          - text: Dépenses
+        - link "Clients" [ref=e27] [cursor=pointer]:
+          - /url: /fr/clients
+          - img [ref=e28]
+          - text: Clients
+      - link "Paramètres" [ref=e34] [cursor=pointer]:
+        - /url: /fr/settings
+        - img [ref=e35]
+        - text: Paramètres
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - heading "Clients" [level=1] [ref=e41]
+          - button "+ Nouveau client" [ref=e42] [cursor=pointer]
+        - textbox "Rechercher un client..." [ref=e44]
+        - generic [ref=e45]:
+          - generic [ref=e46] [cursor=pointer]:
+            - generic [ref=e47]: J
+            - generic [ref=e48]: James Hetfield
+            - generic [ref=e49]: metallica@gmail.yeahyeahhhh
+            - generic [ref=e50]: "0606060606"
+            - generic [ref=e51]: Los Angeles
+          - generic [ref=e52] [cursor=pointer]:
+            - generic [ref=e53]: C
+            - generic [ref=e54]: Charlie Chaplin
+            - generic [ref=e55]: charlie.chaplin@gmail.com
+            - generic [ref=e56]: "0606060606"
+            - generic [ref=e57]: London
+  - button "Open Next.js Dev Tools" [ref=e63] [cursor=pointer]:
+    - img [ref=e64]
+  - alert [ref=e67]
+```
