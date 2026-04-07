@@ -150,7 +150,8 @@
     "detail": {
       "info": "Informations",
       "invoices": "Factures ({n})",
-      "noInvoices": "Aucune facture pour ce client"
+      "noInvoices": "Aucune facture pour ce client",
+      "test": "test"
     }
   }
 }
